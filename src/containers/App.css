@@ -1,4 +1,5 @@
 @font-face {
+    font-display: swap; /* This helps as improvement website performanse when loading fonts*/
     font-family: 'SEGA LOGO FONT';
     font-style: normal;
     font-weight: normal;
