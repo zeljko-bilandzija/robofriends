@@ -12,9 +12,9 @@ jobs:
     steps:
       - checkout # check out the code in the project directory
       - run: echo "hello world 2" # run echo command
-  workflows:
-    version: 2
-    boby_build:
-      jobs:
-        - boby
-        - build
+workflows:
+  version: 2
+  boby_build:
+    jobs:
+      - boby
+      - build
