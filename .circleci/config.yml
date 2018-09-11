@@ -1,21 +1,21 @@
-version: 2	
-jobs:	jobs:
-  boby:	
-    docker: # use docker executor type; machine ans macos executors are also supported	
-      - image: circleci/node:4.8.2 # primary container, where  your job's commands are run	
-    steps:	
-      - checkout # check out the code in the project directory	
-      - run: echo "hello world" # run echo command	
-  build:	  build:
-    docker: # use docker executor type; machine ans macos executors are also supported	    docker:
-      - image: circleci/node:4.8.2 # primary container, where  your job's commands are run	      - image: circleci/ruby:2.4.1-jessie
-    steps:	    steps:
-      - checkout # check out the code in the project directory	      - run: |
-      - run: echo "hello world 2" # run echo command	          bundle install
-workflows:	          bundle exec rake db:schema:load
-  version: 2	          bundle exec rspec spec
-  boby_build:	          bundle exec cucumber 
-    jobs:	
-      - boby	
-      - build	
-# testing branch circleci 
+version: 2
+jobs:
+  boby:
+    docker: # use docker executor type; machine ans macos executors are also supported
+      - image: circleci/node:4.8.2 # primary container, where  your job's commands are run
+    steps:
+      - checkout # check out the code in the project directory
+      - run: echo "hello world" # run echo command
+  build:
+    docker: # use docker executor type; machine ans macos executors are also supported
+      - image: circleci/node:4.8.2 # primary container, where  your job's commands are run
+    steps:
+      - checkout # check out the code in the project directory
+      - run: echo "hello world 2" # run echo command
+workflows:
+  version: 2
+  boby_build:
+    jobs:
+      - boby
+      - build
+# testing branch circleci
