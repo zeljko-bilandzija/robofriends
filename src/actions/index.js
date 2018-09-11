@@ -1,4 +1,5 @@
 import * as constants from '../constants';
+import { apiCall } from '../api';
 
 export const setSearchField = text => ({
     type: constants.CHANGE_SEARCHFIELD,
@@ -8,8 +9,7 @@ export const setSearchField = text => ({
 // export const requestRobots = dispatch => { BEFORE THUNK
 export const requestRobots = () => dispatch => {
     dispatch({type: constants.REQUEST_ROBOTS_PENDING});
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
+    apiCall('https://jsonplaceholder.typicode.com/users')
         .then(users => dispatch({type: constants.REQUEST_ROBOTS_SUCCESS, payload: users}))
         .catch(err => dispatch({type: constants.REQUEST_ROBOTS_FAIL, payload: err}));
 }
