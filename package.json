@@ -20,14 +20,15 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "pre-commit": "pretty-quick --staged"
   },
   "devDependencies": {
     "enzyme": "^3.4.2",
     "enzyme-adapter-react-16": "^1.2.0",
     "husky": "^0.14.3",
-    "prettier": "1.14.2",
-    "pretty-quick": "^1.6.0",
+    "prettier": "1.12.1",
+    "pretty-quick": "^1.4.1",
     "redux-mock-store": "^1.5.3"
   },
   "husky": {

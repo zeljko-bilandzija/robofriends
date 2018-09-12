@@ -14,11 +14,11 @@ export default class MainPage extends Component {
     }
 
     render() {
-        const { searchField, onSearchChange, isPending } = this.props;
+        const {              searchField, onSearchChange, isPending } = this.props;
 
         // In case of long loading
-        if (isPending) {
-            return <h1>Loading...</h1>;
+        if (isPending         ) {
+            return <h1>        Loading...</h1>;
         }
 
         return (
